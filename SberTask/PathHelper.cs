@@ -7,6 +7,16 @@ public static class PathHelper
 {
     public static int GetPathCount(int m, int n)
     {
+        if (m < 0)
+        {
+            throw new ArgumentException("m cannot be negative");
+        }
+
+        if (n < 0)
+        {
+            throw new ArgumentException("n cannot be negative");
+        }
+        
         if (m == 0 || n == 0)
         {
             return 0;

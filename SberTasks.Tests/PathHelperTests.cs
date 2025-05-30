@@ -33,4 +33,21 @@ public class PathHelperTests
         // Assert
         Assert.That(result, Is.EqualTo(expected));
     }
+    
+    [Test]
+    [TestCase(-1, 0)]
+    [TestCase(0, -1)]
+    [TestCase(-1, -1)]
+    [TestCase(1, -1)]
+    [TestCase(-1, 1)]
+    public void GetPathCount_ShouldThrowArgumentException_WhenNOrNIsNegative(int n, int m)
+    {
+        // Arrange
+        // Act
+        // Assert
+        Assert.Throws<ArgumentException>(() =>
+        {
+            PathHelper.GetPathCount(m, n);
+        });
+    }
 }
