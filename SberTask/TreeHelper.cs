@@ -48,4 +48,16 @@ public static class TreeHelper
 
         return tree;
     }
+
+    public static Node SwapRecursive(Node tree)
+    {
+        if (tree != null)
+        {
+            var t = tree.Left;
+            tree.Left = SwapRecursive(tree.Right);
+            tree.Right = SwapRecursive(t);
+        }
+
+        return tree;
+    }
 }
